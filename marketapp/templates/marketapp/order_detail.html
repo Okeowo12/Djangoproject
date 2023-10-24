@@ -1,0 +1,13 @@
+{% extends "marketapp/base.html" %}
+
+
+{% block content %}
+  <h2>Order Details</h2>
+  <p>Order #: {{ order.pk }}</p>
+  <p>Customer: <a href="{% url 'customer_detail' order.customer.pk %}">{{ order.customer.name }}</a></p>
+  <p>Order Date: {{ order.order_date }}</p>
+  <p>Total Amount: {{ order.total_amount }}</p>
+  <a href="{% url 'order_update' order.pk %}">Edit</a>
+  <a href="{% url 'order_delete' order.pk %}">Delete</a>
+  <a href="{% url 'order_list' %}">Back to Order List</a>
+{% endblock %}

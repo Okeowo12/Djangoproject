@@ -1,0 +1,12 @@
+{% extends "marketapp/base.html" %}
+
+
+{% block content %}
+  <h2>Order List</h2>
+  <ul>
+    {% for order in orders %}
+      <li><a href="{% url 'order_detail' order.pk %}">Order #{{ order.pk }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'order_create' %}">Create a new order</a>
+{% endblock %}

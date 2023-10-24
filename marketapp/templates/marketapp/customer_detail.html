@@ -1,0 +1,12 @@
+{% extends "marketapp/base.html" %}
+
+
+{% block content %}
+  <h2>Customer Details</h2>
+  <p>Name: {{ customer.name }}</p>
+  <p>Email: {{ customer.email }}</p>
+  <p>Phone Number: {{ customer.phone_number }}</p>
+  <a href="{% url 'customer_update' customer.pk %}">Edit</a>
+  <a href="{% url 'customer_delete' customer.pk %}">Delete</a>
+  <a href="{% url 'customer_list' %}">Back to Customer List</a>
+{% endblock %}

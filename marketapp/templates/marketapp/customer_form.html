@@ -1,0 +1,12 @@
+{% extends "marketapp/base.html" %}
+
+
+{% block content %}
+  <h2>{% if form.instance.pk %}Edit Customer{% else %}Create Customer{% endif %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+  <a href="{% url 'customer_list' %}">Back to Customer List</a>
+{% endblock %}
